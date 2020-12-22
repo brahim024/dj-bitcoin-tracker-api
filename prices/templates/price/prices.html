@@ -1,1 +1,35 @@
 {% extends 'base.html' %}
+
+{% block title %}
+  price page
+{% endblock title %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Logo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Rank</th>
+        <th scope="col">Market Cap</th>
+        <th scope="col">Prices</th>
+        <tbody>
+         {% if data %}
+            {% for item in data %}
+                <tr>
+                    <td><img src={{item.image}} height='50'></td>
+                    <td>{{item.name}}</td>
+                    <td>{{obj.rank}}</td>
+                    <td></td>
+
+                </tr>
+              
+            {% endfor %}
+         {% else %}
+            <h1>Nothind here </h1>
+         {% endif %}
+
+        </tbody>
+      </tr>
+    </thead>
+  </table>
+{% endblock content %}
