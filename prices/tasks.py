@@ -1,13 +1,14 @@
 from celery import shared_task
-from .models import Prices
+from .models import Test, Prices
+
 from celery.decorators import periodic_task
-#from celery.tasks.schedules import crontab
+from celery.task.schedules import crontab
+import requests 
 @shared_task
-def create_price_items(name,image,price,cap_rank,market_cap):
-    Price.objects.create(name=name)
-    Price.objects.create(image=image)
-    Price.objects.create(price=price)
-    Price.objects.create(market_cap=market_cap)
-#@periodic_task(run_every=(crontab(minute='*/1')))
-#def run_create_items():
-#    create_price_items.delay(name='new2020')
+def create_price_items(name):
+    Test.objects.create(name=name)
+    
+
+@periodic_task(run_every=(crontab(minute='*/1')))
+def run_create_items():
+    create_price_items.delay(name='new2020')
