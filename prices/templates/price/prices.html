@@ -6,7 +6,9 @@
 {% block content %}
   <table class="table">
     <thead>
+        <h1>cryptocurrency market data </h1>
       <tr>
+        
         <th scope="col">Logo</th>
         <th scope="col">Name</th>
         <th scope="col">Rank</th>
@@ -18,9 +20,10 @@
                 <tr>
                     <td><img src={{item.image}} height='50'></td>
                     <td>{{item.name}}</td>
-                    <td>{{obj.rank}}</td>
-                    <td></td>
-
+                    <td>{{item.market_cap_rank}}</td>
+                    <td>{{item.market_cap}}</td>
+                    <td class="text-success">{{item.current_price}}$</td>
+                    
                 </tr>
               
             {% endfor %}
