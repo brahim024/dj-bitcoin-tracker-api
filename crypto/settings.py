@@ -26,7 +26,7 @@ SECRET_KEY = 'gc^nnd$-69$&-v3@d4x22%rj*sq2h3-eq=2j3mf90!e10y9o8!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://bitcry.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
